@@ -565,14 +565,10 @@ export default function NovelScreen({
       </div>
 
       {/* --- CONSOLE SPEAKER DIALOGUE BOX (BOTTOM) --- */}
-      <div 
-        id="dialogue_console_wrapper"
-        className="relative z-20 w-full bg-black/95 border-t border-indigo-500/30 px-4 pt-5 pb-8 sm:px-10 sm:pb-5 shadow-[0_0_50px_rgba(0,0,0,0.95)] max-h-[60dvh] overflow-y-auto"
-      >
-        <div className="max-w-4xl mx-auto flex flex-col gap-3.5 relative">
-
-          {/* Quick skipping tags */}
-          <div className="absolute -top-11 right-0 flex items-center gap-2">
+      <div className="relative w-full z-20 flex-shrink-0">
+        {/* Quick skipping tags */}
+        <div className="absolute -top-11 inset-x-0 mx-auto max-w-4xl px-4 sm:px-10 flex justify-end pointer-events-none">
+          <div className="flex items-center gap-2 pointer-events-auto">
             <button
               onClick={toggleSkipMode}
               className={`flex items-center gap-1 px-2.5 py-1 rounded text-[10px] font-mono font-bold tracking-wider transition uppercase cursor-pointer ${
@@ -597,6 +593,13 @@ export default function NovelScreen({
               <span>AUTO {isAutoPlay ? "ON" : "OFF"}</span>
             </button>
           </div>
+        </div>
+
+        <div 
+          id="dialogue_console_wrapper"
+          className="w-full bg-black/95 border-t border-indigo-500/30 px-4 pt-5 pb-8 sm:px-10 sm:pb-5 shadow-[0_0_50px_rgba(0,0,0,0.95)] max-h-[60dvh] overflow-y-auto"
+        >
+          <div className="max-w-4xl mx-auto flex flex-col gap-3.5 relative">
 
           {/* Active Speaker Name Tag Badge */}
           <div className="inline-flex">
@@ -659,6 +662,7 @@ export default function NovelScreen({
           )}
 
         </div>
+      </div>
       </div>
 
       {/* --- PHONE DEVICE LAYOUT --- */}
