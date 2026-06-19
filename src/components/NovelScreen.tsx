@@ -479,7 +479,7 @@ export default function NovelScreen({
   return (
     <div 
       id="novel_viewport"
-      className="relative w-full h-screen flex flex-col justify-between overflow-hidden bg-[#0a0a0c] select-none text-[#e0e0e0]"
+      className="relative w-full h-[100dvh] flex flex-col justify-between overflow-hidden bg-[#0a0a0c] select-none text-[#e0e0e0]"
     >
       {/* Background Canvas */}
       {renderBackgroundScene()}
@@ -567,7 +567,7 @@ export default function NovelScreen({
       {/* --- CONSOLE SPEAKER DIALOGUE BOX (BOTTOM) --- */}
       <div 
         id="dialogue_console_wrapper"
-        className="relative z-20 w-full bg-black/95 border-t border-indigo-500/30 px-4 py-5 sm:px-10 shadow-[0_0_50px_rgba(0,0,0,0.95)]"
+        className="relative z-20 w-full bg-black/95 border-t border-indigo-500/30 px-4 pt-5 pb-8 sm:px-10 sm:pb-5 shadow-[0_0_50px_rgba(0,0,0,0.95)]"
       >
         <div className="max-w-4xl mx-auto flex flex-col gap-3.5 relative">
 

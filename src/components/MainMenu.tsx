@@ -63,7 +63,7 @@ export default function MainMenu({
   return (
     <div 
       id="main_menu_viewport"
-      className="relative w-full min-h-screen bg-[#0a0a0c] text-[#e0e0e0] flex flex-col justify-between p-6 sm:p-12 overflow-hidden select-none"
+      className="relative w-full min-h-[100dvh] bg-[#0a0a0c] text-[#e0e0e0] flex flex-col justify-between p-6 sm:p-12 overflow-hidden select-none"
     >
       {/* Absolute Background Mesh Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#1a1a1e_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none z-0" />

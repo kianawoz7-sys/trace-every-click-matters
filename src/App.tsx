@@ -122,7 +122,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-[#070709] text-[#e2e8f0] font-sans overflow-x-hidden">
+    <div className="relative w-full min-h-[100dvh] bg-[#070709] text-[#e2e8f0] font-sans overflow-x-hidden">
       
       {/* Cool cyber Scanline grid overlay */}
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.15)_50%),linear-gradient(90deg,rgba(99,102,241,0.03),rgba(6,182,212,0.02),rgba(244,63,94,0.03))] bg-[length:100%_2px,3px_100%] z-50 opacity-[0.4]" />
@@ -174,11 +174,12 @@ export default function App() {
 
       {/* --- FLOATING ACHIEVEMENT TOAST NOTIFICATION --- */}
       {activeToast && (
-        <div 
-          id="achievement_popup_toast"
-          className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3.5 bg-black/95 border-2 border-indigo-500 p-4 rounded shadow-[0_0_30px_rgba(99,102,241,0.35)] max-w-sm w-[90%] sm:w-auto animate-[fadeInDown_0.4s_ease-out_forwards]"
-        >
-          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black flex items-center justify-center border border-indigo-500/40 animate-pulse">
+        <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+          <div 
+            id="achievement_popup_toast"
+            className="flex items-center gap-3.5 bg-black/95 border-2 border-indigo-500 p-4 rounded shadow-[0_0_30px_rgba(99,102,241,0.35)] w-full max-w-sm animate-[fadeInDown_0.4s_ease-out_forwards] pointer-events-auto"
+          >
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black flex items-center justify-center border border-indigo-500/40 animate-pulse">
             <ShieldCheck className="w-5 h-5 text-indigo-400" />
           </div>
           <div className="flex-col text-left font-sans">
@@ -192,6 +193,7 @@ export default function App() {
               {activeToast.desc}
             </p>
           </div>
+        </div>
         </div>
       )}
 
@@ -210,11 +212,11 @@ export default function App() {
         @keyframes fadeInDown {
           from {
             opacity: 0;
-            transform: translate(-50%, -20px);
+            transform: translateY(-20px);
           }
           to {
             opacity: 1;
-            transform: translate(-50%, 0);
+            transform: translateY(0);
           }
         }
         @keyframes slideInLeft {
