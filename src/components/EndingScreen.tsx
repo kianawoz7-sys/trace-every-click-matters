@@ -302,10 +302,11 @@ export default function EndingScreen({
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-lg
-        transition-opacity duration-700 overflow-y-auto py-6
+      className={`fixed inset-0 z-[100] bg-black/95 backdrop-blur-lg
+        transition-opacity duration-700 overflow-y-auto
         ${visible ? "opacity-100" : "opacity-0"}`}
     >
+      <div className="min-h-[100dvh] w-full flex items-center justify-center py-12 sm:py-16">
       {/* ── Floating particles (good endings only) ── */}
       {endingMeta.isGoodEnding && particleCount.map((i) => (
         <div
@@ -516,6 +517,7 @@ export default function EndingScreen({
           100% { opacity: 0;   transform: translateY(-120px) scale(0.3); }
         }
       `}</style>
+      </div>
     </div>
   );
 }
