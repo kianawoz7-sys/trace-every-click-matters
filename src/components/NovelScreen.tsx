@@ -537,7 +537,7 @@ export default function NovelScreen({
       {/* --- CHARACTER STAGE PANEL --- */}
       <div 
         id="character_visuals_panel"
-        className="relative z-10 flex-1 flex items-end justify-center px-4 sm:px-12 pointer-events-none"
+        className="relative z-10 flex-1 flex items-end justify-center px-4 sm:px-12 pointer-events-none min-h-0 overflow-hidden"
       >
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#0a0a0c]/85 to-transparent z-0 pointer-events-none" />
 
@@ -567,7 +567,7 @@ export default function NovelScreen({
       {/* --- CONSOLE SPEAKER DIALOGUE BOX (BOTTOM) --- */}
       <div 
         id="dialogue_console_wrapper"
-        className="relative z-20 w-full bg-black/95 border-t border-indigo-500/30 px-4 pt-5 pb-8 sm:px-10 sm:pb-5 shadow-[0_0_50px_rgba(0,0,0,0.95)]"
+        className="relative z-20 w-full bg-black/95 border-t border-indigo-500/30 px-4 pt-5 pb-8 sm:px-10 sm:pb-5 shadow-[0_0_50px_rgba(0,0,0,0.95)] max-h-[60dvh] overflow-y-auto"
       >
         <div className="max-w-4xl mx-auto flex flex-col gap-3.5 relative">
 
