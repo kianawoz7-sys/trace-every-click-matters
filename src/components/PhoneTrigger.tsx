@@ -126,20 +126,24 @@ export default function PhoneTrigger({
   const isDay4 = currentNodeId.startsWith("day4_") || currentNodeId.startsWith("ending_") || currentNodeId.startsWith("game_completed");
 
   if (!isOpen) {
+    // If there are choices, the NovelScreen red banner provides the "Buka Ponsel" button,
+    // so we hide this floating button to prevent visual clutter and distraction.
+    if (choices) return null;
+
     return (
       <button
         id="phone_trigger_button"
         onClick={onToggleOpen}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 px-5 py-4 bg-indigo-950/95 hover:bg-indigo-900 text-white font-mono text-xs font-bold rounded-full shadow-[0_4px_30px_rgba(99,102,241,0.5)] border border-indigo-500 animate-bounce transition duration-200 uppercase tracking-widest cursor-pointer"
+        className="fixed bottom-4 right-4 z-40 flex items-center gap-2 px-4 py-3 bg-indigo-950/90 hover:bg-indigo-900 text-white font-mono text-[10px] font-bold rounded-full shadow-lg border border-indigo-500/50 transition duration-300 uppercase tracking-wider cursor-pointer"
       >
-        <span className="relative flex h-2.5 w-2.5">
-          {(triggerData || choices) && (
+        <span className="relative flex h-2 w-2">
+          {triggerData && (
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
           )}
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-pink-500"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
         </span>
-        <Phone className="w-4 h-4 text-pink-400" />
-        {choices ? "PILIH TINDAKAN!" : triggerData ? "ADA NOTIFIKASI!" : "BUKA PHONE"}
+        <Phone className="w-3.5 h-3.5 text-pink-400" />
+        {triggerData ? "ADA NOTIFIKASI!" : "BUKA PHONE"}
       </button>
     );
   }
